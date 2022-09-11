@@ -64,6 +64,7 @@ class SingleLinkList:
         self.head = self.head.next
 
     def remove_all_same_item(self, item):
+        """删除所有相同节点"""
         while self.head.value == item:
             self.remove_head()
 
@@ -81,24 +82,19 @@ class SingleLinkList:
 if __name__ == '__main__':
     s = SingleLinkList()
     s.append(1)
-    s.append(1)
-    s.append(1)
     s.append(2)
     s.append(3)
-    s.append(3)
-    s.append(4)
-    s.append(5)
-    s.append(5)
-    # s.add(0)
-    # s.add(-1)
-    # s.add(-2)
-    # s.add(-3)
     s.travel()
-    # s.remove_head()
-    # s.travel()
-    # s.remove_head()
-    # s.travel()
-    # print(s.head.value)
-    # s.remove(3)
-    s.remove_all_same_item(1)
-    s.travel()
+
+    while s.head is not None:
+        print(s.head.value)
+        s.head = s.head.next
+
+    head1 = Node(100)
+    head1.next = Node(200)
+    head1.next.next = Node(300)
+    head1.next.next.next = Node(400)
+    print(head1)
+    print(head1.next)
+    print(head1.next.next)
+    print(head1.next.next.next)
