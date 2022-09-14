@@ -19,11 +19,11 @@ class Solution(SingleLinkList):
             return
         cur = self.head
         pre = None
-        while cur is not None:
-            tmp = cur.next
+        while cur:
+            cur_next = cur.next
             cur.next = pre
             pre = cur
-            cur = tmp
+            cur = cur_next
         self.head = pre
 
 
